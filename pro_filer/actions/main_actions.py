@@ -74,3 +74,26 @@ def show_preview(context):
     if context["all_files"] or context["all_dirs"]:
         print(f'First 5 files: {context["all_files"][:5]}')
         print(f'First 5 directories: {context["all_dirs"][:5]}')
+
+
+if __name__ == "__main__":
+    context = {
+        "all_files": [
+            "src/__init__.py",
+            "src/app.py",
+            "src/utils/__init__.py",
+        ],
+        "all_dirs": ["src", "src/utils"],
+    }
+
+    show_preview(context)
+    # Saída:
+    # Found 3 files and 2 directories
+    # First 5 files: ['src/__init__.py', 'src/app.py', 'src/utils/__init__.py']
+    # First 5 directories: ['src', 'src/utils']
+
+    context = {"all_files": [], "all_dirs": []}
+
+    show_preview(context)
+    # Saída:
+    # Found 0 files and 0 directories
