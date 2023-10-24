@@ -87,11 +87,17 @@ if __name__ == "__main__":
     # }
 
     # show_preview(context)
-    # Saída:
-    # Found 3 files and 2 directories
-    # First 5 files: ['src/__init__.py', 'src/app.py', 'src/utils/__init__.py']
-    # First 5 directories: ['src', 'src/utils']
 
-    context = {"base_path": "actions"}
+    # context = {"base_path": "actions"}
 
-    show_details(context)
+    # show_details(context)
+
+    context = {
+        "all_files": [
+            "pro_filer/actions/__init__.py",
+            "pro_filer/actions/alpha_actions.py",
+            "pro_filer/actions/beta_actions.py",
+            "pro_filer/actions/main_actions.py",
+        ]
+    }
+    show_disk_usage(context)
